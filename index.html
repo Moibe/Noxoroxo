@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stye.css">
+    <title>Awesome Front</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+</head>
+
+<body class="gradient">
+    <div class="main_row">
+        <div class="container1 d-flex wSm50">
+            <div>
+                <form action="#">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">First Name</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="token_name" placeholder="Your name.." oninput="myInputOne(this)">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="lname">Last Name</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="token_symbol" placeholder="Your last name.."
+                                oninput="myInputTwo(this)">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="lname">City</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="token_amount" placeholder="Your city.." oninput="myInputThree(this)">
+                        </div>
+                    </div>
+                    <br>
+
+                </form>
+            </div>
+        </div>
+        <div class="container1 d-flex w-20 wSm50" style="margin-left: 14px;">
+            <div>
+                <div class="form" action="" style="height: 267px;">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">First Name:</label>
+                        </div>
+                        <div class="col-75 lb labelText" style=" width: 160px;" id="nameText">
+                            <!-- <input type="text" placeholder="Your name.."> -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="lname">Last Name:</label>
+                        </div>
+                        <div class="col-75 lb labelText" style=" width: 160px;" id="lastnameText">
+                            <!-- <input type="text" placeholder="Your last name.."> -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="lname">City:</label>
+                        </div>
+                        <div class="col-75 lb labelText" style=" width: 160px;" id="cityText">
+                            <!-- <input type="text" placeholder="Your city.."> -->
+                        </div>
+                    </div>
+                    <div class="button-center">
+                        <section class="flex scene">
+                            <div class="confetti">
+                                <figure class="confetti__image">
+                                    <svg viewBox="-225 -225 450 450" style="position: absolute;    position: absolute;
+                                    top: -50%;" role="presentational">
+                                </figure>
+                                <button class="button confetti__button" id="submit_launch">
+                                    <span class="button__text">
+                                        Submit
+                                    </span>
+                                </button>
+                            </div>
+                        </section>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./abiLaunch.js"></script>
+    <script type="text/javascript" src="./launcher.js"></script>
+</body>
+<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+<script>
+    (function () {
+        const svg = document.querySelector(".confetti__image svg");
+        const button = document.querySelector(".confetti__button");
+        const isAnimationOk = window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+
+        const colors = [
+            "#4b7bec", // blue
+            "#fc5c65", // red
+            "#fed330", // yellow
+            "#26de81", // green
+            "#2bcbba", // sea
+            "#fd9644", // orange
+            "#a55eea" // violet
+        ];
+        const positions = [-200, -175, -150, -125, -100, -75, -50, 50, 75, 100, 125, 150, 175, 200];
+        const shapes = [
+            "M -20 0 a 20 20 0 1 0 40 0 a 20 20 0 1 0 -40 0", // circle
+            "M -20 0 a 20 20 0 1 0 40 0 Z", // semicircle
+            "M -10 -10 H 20 V 20 H -10 Z", // square
+            "M 0 -15 L 20 20 L -20 20 Z" // triangle
+        ];
+        const shapeCount = 16;
+        const buttonTl = gsap.timeline();
+        gsap.set(button, {
+            transformOrigin: "50% 50%"
+        });
+
+        buttonTl.to(button, {
+            scale: 0.975,
+            repeat: 1,
+            yoyo: true,
+            duration: 0.15,
+            ease: "Back.easeIn.config(1.5)"
+        });
+        buttonTl.pause();
+
+        button.addEventListener("click", function (e) {
+            buttonTl.play(0);
+
+            var elements = [];
+
+            for (let i = 0; i < shapeCount; i++) {
+                var newElement = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                newElement.setAttribute("d", gsap.utils.random(shapes));
+                newElement.style.fill = gsap.utils.random(colors);
+                svg.appendChild(newElement);
+                elements.push(newElement);
+            }
+
+            function removeElements() {
+                elements.forEach(shape => {
+                    svg.removeChild(shape);
+                });
+            }
+
+            gsap.set(elements, {
+                transformOrigin: "50% 50%",
+                scale: "random(0.4, 1)",
+            });
+            gsap.to(elements, {
+                onComplete: removeElements,
+                keyframes: [{
+                    rotation: "random(-360, 360)",
+                    x: `random([${positions.join(",")}])`,
+                    y: `random([${positions.join(",")}])`,
+                    ease: "expo.out",
+                    duration: 3,
+                    stagger: {
+                        amount: 0.15
+                    }
+                }, {
+                    opacity: 0,
+                    delay: -2.35,
+                    ease: "expo.out",
+                    duration: .5
+                }]
+            });
+        });
+    }());
+
+
+</script>
+<script>
+
+    const myInputOne = (e) => {
+        document.getElementById('nameText').innerHTML = e.value;
+    }
+
+    const myInputTwo = (e) => {
+        document.getElementById('lastnameText').innerHTML = e.value;
+    }
+    const myInputThree = (e) => {
+        document.getElementById('cityText').innerHTML = e.value;
+    }
+
+</script>
+
+</html>
