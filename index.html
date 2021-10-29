@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <title>Awesome Front</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
 </head>
 
 <body id="body" class="gradient">
@@ -23,7 +25,7 @@
                             <label for="fname">First Name</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" id="nameOne" placeholder="Your name.." oninput="myInputOne(this)">
+                            <input type="text" id="field1" placeholder="Your name.." oninput="myInputOne(this)">
                         </div>
                     </div>
                     <div class="row">
@@ -31,7 +33,7 @@
                             <label for="lname">Last Name</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" id="lastnameOne" placeholder="Your last name.."
+                            <input type="text" id="field2" placeholder="Your last name.."
                                 oninput="myInputTwo(this)">
                         </div>
                     </div>
@@ -40,7 +42,7 @@
                             <label for="lname">Number</label>
                         </div>
                         <div class="col-75">
-                            <input type="number" id="numberOne" placeholder="Enter Your Number.."
+                            <input type="number" id="field3" placeholder="Enter Your Number.."
                                 oninput="myInputFour(this)">
                         </div>
                     </div>
@@ -131,6 +133,8 @@
                 </div>
         </section>
     </div>
+    <script type="text/javascript" src="./abiLaunch.js"></script>
+    <script type="text/javascript" src="./launcher.js"></script>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

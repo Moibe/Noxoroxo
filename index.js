@@ -50,9 +50,9 @@ const myClick = (e) => {
         setTimeout(function () {
             $('#adddedSuccessfull').css('display', 'block')
             e.removeAttribute("disabled", "true")
-            nameOne.value='';
-            lastnameOne.value ='';
-            numberOne.value='';
+            field1.value='';
+            field2.value ='';
+            field3.value='';
     
         }, 13000)
     }
@@ -71,9 +71,9 @@ const myClick = (e) => {
         setTimeout(function () {
             $('#adddedSuccessfull').css('display', 'block')
             e.removeAttribute("disabled", "true")
-            nameOne.value='';
-            lastnameOne.value ='';
-            numberOne.value='';
+            field1.value='';
+            field2.value ='';
+            field3.value='';
     
         }, 13000)
     }

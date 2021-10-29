@@ -40,11 +40,11 @@ async function init(){
 
 async function launch(){
     console.log("El botón SUMBMIT si sirvió!");
-    //let name = document.getElementById("token_name").value //Aquí iría un elemento que cachamos q varia según ambiente.
-    let name = document.getElementById("token_name").value
-    let symbol = document.getElementById("token_symbol").value
-    //let amount = parseInt(document.getElementById("token_amount").value)
-    let amount = document.getElementById("token_amount").value
+    //let name = document.getElementById("field1").value //Aquí iría un elemento que cachamos q varia según ambiente.
+    let name = document.getElementById("field1").value
+    let symbol = document.getElementById("field2").value
+    //let amount = parseInt(document.getElementById("field3").value)
+    let amount = document.getElementById("field3").value
     const accounts = await web3.eth.getAccounts();
     const contract = new web3.eth.Contract(contractAbi, CONTRACT_ADDRESS_LAUNCH);
     console.log(contract);
@@ -64,18 +64,7 @@ async function launch(){
         
     })
 
-    // const printAddress = () => {
-    //     resultado.then((a) => {
-    //       console.log("Ahora estoy imprimiendo el resultado...");
-    //       console.log(a.blockNumber);
-    //       console.log(a.cumulativeGasUsed);
-    //       console.log(a.transactionHash);
-    //     });
-    //   };
-      
-      
-    //   printAddress();
-
+   
     const printAddress = async () => {
         const a = await resultado;
 
