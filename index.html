@@ -7,16 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Awesome Front</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css"> -->
 </head>
 
 <body id="body" class="gradient">
     <div class="row addrow2 main_row" >
+        <div class="buttonDIvOpt" id="optionDIv"><button type="button" class="optionOne btn-primary" id="buttonOption" onclick="optionButton(this)">Option A</button></div>
     </div>
     <div class="main_row">
-        <div class="container1 d-flex wSm50">
+        <div id="glass1" class="container1 animate__animated  d-flex wSm50 ">
             <div id="formText" >My Form Version A</div>
             <div>
                 <form action="#">
@@ -51,14 +50,13 @@
                 </form>
             </div>
         </div>
-        <div class="container1 d-flex w-20 wSm50" style="margin-left: 14px;">
-        <div style="" class="buttonDIvOpt"><button type="button" class="optionOne btn-primary" id="buttonOption" onclick="optionButton(this)">Option A</button></div>
+        <div class="container1 d-flex w-20 wSm50 animate__animated  " id="glass2" style="margin-left: 14px;opacity: 0;">
 
             <div>
                 <div class="form" action="">
                     <div class="row">
                         <!-- <div class="col-25">
-                            <label for="fname">First Name:</label>
+                            <label for="fname">First animate__bounceInRight Name:</label>
                         </div> -->
                         <div class="col-75 lb" style=" width: 180px;" id="nameText">
                             <!-- <input type="text" placeholder="Your name.."> -->
@@ -72,14 +70,14 @@
                             <!-- <input type="text" placeholder="Your last name.."> -->
                         </div>
                     </div>
-                    <div class="row">
+                     <!-- <div class="row"> -->
                         <!-- <div class="col-25">
                             <label for="lname">City:</label>
                         </div> -->
-                        <div class="col-75 lb" style=" width: 180px;" id="cityText">
+                        <!-- <div class="col-75 lb" style=" width: 180px;" id="cityText"> -->
                             <!-- <input type="text" placeholder="Your city.."> -->
-                        </div>
-                    </div>
+                        <!-- </div>
+                    </div> -->
                     <div class="row">
                         <!-- <div class="col-25">
                             <label for="lname">City:</label>
@@ -91,14 +89,15 @@
                     <div class="alert alert-success" id="adddedSuccessfull" style="display: none;" role="alert">
                         DATA ADDED SUCCESSFULLY!
                     </div>
+                    <div id="clickReturn" onclick="clickToReturn(this)" style="display: none;cursor: pointer;">click to return</div>
                     <div class="button-center">
                         <section class="flex scene">
                             <div class="confetti">
                                 <figure class="confetti__image">
                                     <svg viewBox="-225 -225 450 450" style="position: absolute;" role="presentational">
                                 </figure>
-                                <button class="button confetti__button" onclick="myClick(this)">
-                                    <span class="button__text">
+                                <button type="button" class="button confetti__button" onclick="myClick(this)" disabled>
+                                    <span class="button__text" style="background-color: grey;">
                                         Submit
                                     </span>
                                 </button>
@@ -133,8 +132,6 @@
                 </div>
         </section>
     </div>
-    <script type="text/javascript" src="./abiLaunch.js"></script>
-    <script type="text/javascript" src="./launcher.js"></script>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
