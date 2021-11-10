@@ -41,7 +41,10 @@ async function init(){
           console.log(error.message);
           console.log("Como aún no estamos conectados, no hay más que hacer aquí por el momento.")
              }
-    } 
+    }
+    
+    fulfill(result); //if the action succeeded
+    reject(error); //if the action did not succeed
 }
 
 async function launch(){
