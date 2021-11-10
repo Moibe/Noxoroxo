@@ -23,14 +23,7 @@ async function init(){
         //windows.location.pathname = "/index.html";
         console.log("No hay usuario...");
         try{
-          
-          // //Logueo básico:
-          // console.log("login clicked");
-          // const web3 = await Moralis.Web3.enable();
-          // const chainIdHex = web3.currentProvider.chainId;
-          // const chainIdDec = await web3.eth.getChainId();
-          // console.log(chainIdHex);
-          // console.log(chainIdDec);
+     
 
           web3 = await Moralis.Web3.enable(); 
           console.log("Conectados a Web3:");

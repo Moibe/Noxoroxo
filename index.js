@@ -112,7 +112,7 @@ const myClick = (e) => {
         // call the function to simulate the long running process
         //fakeProcess();
         init();
-        //launch();
+        launch();
     }
     else {
         handleOptionTwo();
@@ -120,7 +120,7 @@ const myClick = (e) => {
         // call the function to simulate the long running process
         //fakeProcess();
         init();
-        //launch();
+        launch();
     }
 
 
