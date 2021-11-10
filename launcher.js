@@ -14,7 +14,6 @@ console.log("Conectados a Moralis");
 
 async function launch(){
 
-
   console.log("Entramos a launch...")
   //Primero declaramos la promesa. 
   let myPromise = new myPromise(function(myResolve, myReject) {
@@ -63,10 +62,10 @@ async function launch(){
     }
   });
 
-  myPromise.then(
-    function(){crear()}, 
-    function(){console.log("Hubo un error al crear...")}
-  );
+  // myPromise.then(
+  //   function(){crear()}, 
+  //   function(){console.log("Hubo un error al crear...")}
+  // );
 
   async function crear(){
 
