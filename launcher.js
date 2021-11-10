@@ -23,7 +23,7 @@ async function launch(){
     
     //Ahora si checa si está en la red correcta, por ahora la única red correcta será BNB Moralis.
     try {
-            await web3.currentProvider.request({
+            web3.currentProvider.request({
               method: "wallet_switchEthereumChain",
               params: [{ chainId: "0x4" }]
             });
@@ -31,7 +31,7 @@ async function launch(){
             alert(error.message);
           }
     
-    const accounts = await web3.eth.getAccounts();
+    const accounts = web3.eth.getAccounts();
     const contract = new web3.eth.Contract(contractAbi, CONTRACT_ADDRESS_LAUNCH);
     console.log(contract);
     console.log(name);
@@ -93,7 +93,7 @@ console.log("Estoy ejecutando el login()...")
         console.log(web3);
         console.log("Datos obtenidos de la cadena:")
         const chainIdHex = web3.currentProvider.chainId;
-        const chainIdDec = await web3.eth.getChainId();
+        const chainIdDec = web3.eth.getChainId();
         console.log(chainIdHex);
         console.log(chainIdDec);
         console.log("Cambiaremos x a uno para indicar que nos logueamos.")
