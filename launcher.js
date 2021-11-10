@@ -70,7 +70,7 @@ async function launch(){
 
 async function login(){
 
-myPromise = new myPromise(function(myResolve, myReject) {
+const myPromise = new myPromise(function(myResolve, myReject) {
 
   let x = 0;
 
