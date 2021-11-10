@@ -65,8 +65,7 @@ async function launch(){
       };
       
     printAddress();
-
-   
+ 
 }
 
 let myPromise = new Promise(function(myResolve, myReject) {
@@ -114,7 +113,4 @@ console.log("Estoy ejecutando el login()...")
   }
 });
 
-myPromise.then(
-  function(value) {launch();}, //Si funcionó entonces ejecuta el launch();
-  function(error) {console.log(error);}  //Si no funcionó por ahora solo despliega el error. 
-);
+
