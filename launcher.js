@@ -68,7 +68,7 @@ async function launch(){
  
 }
 
-async function login(){
+async function init(){
 
 const myPromise = new myPromise(function(myResolve, myReject) {
 
@@ -117,5 +117,8 @@ console.log("Estoy ejecutando el login()...")
 });
 
 }
+
+
+init();
 
 
