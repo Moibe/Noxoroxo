@@ -22,9 +22,9 @@ async function init(){
     //..previamente conectados.
     if(!currentUser){
         //windows.location.pathname = "/index.html";
-        console.log("No hay usuario...");
+        console.log("Como no hay usuario...");
         try{
-     
+          console.log("Me estoy conectando ahora a la Web3...")
           web3 = await Moralis.Web3.enable(); 
           console.log("Conectados a Web3:");
           console.log(web3);
