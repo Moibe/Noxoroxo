@@ -68,7 +68,9 @@ async function launch(){
  
 }
 
-let myPromise = new Promise(function(myResolve, myReject) {
+async function login(){
+
+myPromise = new myPromise(function(myResolve, myReject) {
 
   let x = 0;
 
@@ -106,11 +108,14 @@ console.log("Estoy ejecutando el login()...")
            }
   }
 
+ 
   if (x == 1) {
     myResolve("OK");
   } else {
     myReject(error);
   }
 });
+
+}
 
 
