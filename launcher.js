@@ -5,6 +5,7 @@ const serverUrl = "https://m02z2ncyupuz.bigmoralis.com:2053/server";
 //Elementos que usaremos para conectar la web3. 
 let web3; 
 const CONTRACT_ADDRESS_LAUNCH = "0x4ae8d2756ab677C909b539E981Df865277706D44"; //Está en Rinkeby, si lo usas en otra red te regresará vacio.
+const myPromise
 
 //És necesario iniciar Moralis con start paara cualquier operación. 
 //Y todo lo que se hace aquí es con Moralis, no hay nada que se haga directo a la web3. 
@@ -71,7 +72,7 @@ async function launch(){
 async function init(){
 
 console.log("Si entramos al init...");
-const myPromise = new myPromise(function(myResolve, myReject) {
+myPromise = new myPromise(function(myResolve, myReject) {
 
   let x = 0;
 
