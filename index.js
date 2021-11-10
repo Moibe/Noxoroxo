@@ -163,7 +163,7 @@ function stopProgressBar() {
 
 // long running process goes here
 function fakeProcess() {
-    let x = "Hello world! Done!!";
+    let x = "¡¡Hello world! ¡¡Done!!";
 
     // set fake timeout to simulate a long process
     // when the process is done, show the success message
