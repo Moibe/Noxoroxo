@@ -170,7 +170,7 @@ function fakeProcess() {
     // when the process is done, show the success message
     // and hide the progress bar
     setTimeout(function () {
-        console.log("Timeout of 5 seconds...");
+        console.log("Timeout of 5 segundos...");
 
         $('#adddedSuccessfull').html(x);
         $('#adddedSuccessfull').css('display', 'block');
