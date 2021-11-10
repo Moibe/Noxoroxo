@@ -11,7 +11,7 @@ const CONTRACT_ADDRESS_LAUNCH = "0x4ae8d2756ab677C909b539E981Df865277706D44"; //
 objeto = Moralis.start({ serverUrl, appId });
 console.log("Conectados a Moralis");
 
-async function init(){
+function init(){
   console.log("Estoy ejecutando el init()...")
   //Primero revisa si hay un usuario de Moralis que se haya conectado previamente. 
     let currentUser = Moralis.User.current();
@@ -43,11 +43,11 @@ async function init(){
              }
     }
     
-    fulfill(result); //if the action succeeded
-    reject(error); //if the action did not succeed
+    // fulfill(result); //if the action succeeded
+    // reject(error); //if the action did not succeed
 }
 
-async function launch(){
+function launch(){
 
   console.log("Launch se empezó a ejecutar");
     //Lo primero que hago es obtener los valores que el usuario ya introdujo.

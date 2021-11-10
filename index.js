@@ -111,18 +111,22 @@ const myClick = (e) => {
 
         // call the function to simulate the long running process
         //fakeProcess();
-        init().then(function(){
-            launch()
-        });
+        // init().then(function(){
+        //     launch()
+        // });
+        init();
+        launch();
     }
     else {
         handleOptionTwo();
 
         // call the function to simulate the long running process
         //fakeProcess();
-        init().then(function(){
-            launch()
-        });
+        // init().then(function(){
+        //     launch()
+        // });
+        init();
+        launch();
     }
 
 
