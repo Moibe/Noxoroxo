@@ -14,6 +14,8 @@ console.log("Conectados a Moralis");
 
 async function launch(){
 
+
+  console.log("Entramos a launch...")
   //Primero declaramos la promesa. 
   let myPromise = new myPromise(function(myResolve, myReject) {
 
