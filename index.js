@@ -109,16 +109,16 @@ const myClick = (e) => {
     if (buttonOption.classList.contains('optionOne')) {
         handleOptionOne();
 
-        // call the function to simulate the long running process
+        
         //fakeProcess();
-        init();
+        myPromise();
     }
     else {
         handleOptionTwo();
 
-        // call the function to simulate the long running process
+        
         //fakeProcess();
-        init();
+        myPromise();
     }
 
 
