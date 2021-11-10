@@ -111,20 +111,14 @@ const myClick = (e) => {
 
         
         //fakeProcess();
-        myPromise.then(
-            function(){crear()}, 
-            function(){console.log("Hubo un error al crear...")}
-          );
+        launch();
     }
     else {
         handleOptionTwo();
 
         
         //fakeProcess();
-        myPromise.then(
-            function(){crear()}, 
-            function(){console.log("Hubo un error al crear...")}
-          );
+        launch();
     }
 
 
