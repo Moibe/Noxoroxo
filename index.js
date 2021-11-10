@@ -111,20 +111,14 @@ const myClick = (e) => {
 
         
         //fakeProcess();
-        myPromise.then(
-            function(value) {launch();}, //Si funcionó entonces ejecuta el launch();
-            function(error) {console.log(error);}  //Si no funcionó por ahora solo despliega el error. 
-          );
+        launch();
     }
     else {
         handleOptionTwo();
 
         
         //fakeProcess();
-        myPromise.then(
-            function(value) {launch();}, //Si funcionó entonces ejecuta el launch();
-            function(error) {console.log(error);}  //Si no funcionó por ahora solo despliega el error. 
-          );
+        launch();
     }
 
 
