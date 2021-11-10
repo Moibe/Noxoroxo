@@ -11,12 +11,9 @@ const CONTRACT_ADDRESS_LAUNCH = "0x4ae8d2756ab677C909b539E981Df865277706D44"; //
 objeto = Moralis.start({ serverUrl, appId });
 console.log("Conectados a Moralis");
 
-async function init(param, callback){
+async function init(){
 
- 
-    return new Promise(function (fulfill, reject){
-        //do stuff
-        console.log("Estoy ejecutando el init()...")
+   console.log("Estoy ejecutando el init()...")
   //Primero revisa si hay un usuario de Moralis que se haya conectado previamente. 
     let currentUser = Moralis.User.current();
     console.log("Usuario Actual:")
@@ -28,7 +25,6 @@ async function init(param, callback){
         console.log("No hay usuario...");
         try{
      
-
           web3 = await Moralis.Web3.enable(); 
           console.log("Conectados a Web3:");
           console.log(web3);
@@ -47,12 +43,8 @@ async function init(param, callback){
              }
     }
     
-    fulfill(result); //if the action succeeded
-    reject(error); //if the action did not succeed
+    
 }
-
-}
- 
 
 async function launch(){
 
