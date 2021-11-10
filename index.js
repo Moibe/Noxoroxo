@@ -162,18 +162,18 @@ function stopProgressBar() {
     field3.value = '';
 }
 
-// long running process goes here
-function fakeProcess() {
-    let x = "¡¡Hello world! ¡¡Done!!";
+// // long running process goes here
+// function fakeProcess() {
+//     let x = "¡¡Hello world! ¡¡Done!!";
 
-    // set fake timeout to simulate a long process
-    // when the process is done, show the success message
-    // and hide the progress bar
-    setTimeout(function () {
-        console.log("Timeout of 5 segundos...");
+//     // set fake timeout to simulate a long process
+//     // when the process is done, show the success message
+//     // and hide the progress bar
+//     setTimeout(function () {
+//         console.log("Timeout of 5 segundos...");
 
-        $('#adddedSuccessfull').html(x);
-        $('#adddedSuccessfull').css('display', 'block');
-        stopProgressBar();
-    }, 5000);
-}
+//         $('#adddedSuccessfull').html(x);
+//         $('#adddedSuccessfull').css('display', 'block');
+//         stopProgressBar();
+//     }, 5000);
+// }
