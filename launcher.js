@@ -21,6 +21,7 @@ async function init(){
         //windows.location.pathname = "/index.html";
         console.log("No user logged yet.");
         try{
+          console.log("Si entramos al try...")
           web3 = await Moralis.Web3.enable(); 
           console.log("Conectados a Web3:");
           console.log(web3);
