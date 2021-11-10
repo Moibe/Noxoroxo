@@ -113,5 +113,5 @@ async function launch(){
 
 //document.getElementById("submit_launch").onclick = launch;
 
-init(); 
+//init(); 
 
