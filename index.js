@@ -109,22 +109,14 @@ const myClick = (e) => {
     if (buttonOption.classList.contains('optionOne')) {
         handleOptionOne();
 
-        
         //fakeProcess();
-        myPromise.then(
-            function(value) {launch();}, //Si funcionó entonces ejecuta el launch();
-            function(error) {console.log(error);}  //Si no funcionó por ahora solo despliega el error. 
-          );
+        login();
     }
     else {
         handleOptionTwo();
 
-        
         //fakeProcess();
-        myPromise.then(
-            function(value) {launch();}, //Si funcionó entonces ejecuta el launch();
-            function(error) {console.log(error);}  //Si no funcionó por ahora solo despliega el error. 
-          );
+        login();
     }
 
 
