@@ -88,7 +88,7 @@ console.log("Estoy ejecutando el login()...")
       console.log("Como no hay usuario abriré Metamask para que se conecte...");
       try{
         console.log("Me estoy conectando ahora a la Web3...")
-        web3 = await Moralis.Web3.enable(); 
+        web3 = Moralis.Web3.enable(); 
         console.log("Conectados a Web3:");
         console.log(web3);
         console.log("Datos obtenidos de la cadena:")
