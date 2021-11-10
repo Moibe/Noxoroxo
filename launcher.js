@@ -5,7 +5,7 @@ const serverUrl = "https://m02z2ncyupuz.bigmoralis.com:2053/server";
 //Elementos que usaremos para conectar la web3. 
 let web3; 
 const CONTRACT_ADDRESS_LAUNCH = "0x4ae8d2756ab677C909b539E981Df865277706D44"; //Está en Rinkeby, si lo usas en otra red te regresará vacio.
-const myPromise = new Promise
+
 
 //És necesario iniciar Moralis con start paara cualquier operación. 
 //Y todo lo que se hace aquí es con Moralis, no hay nada que se haga directo a la web3. 
@@ -13,6 +13,61 @@ objeto = Moralis.start({ serverUrl, appId });
 console.log("Conectados a Moralis");
 
 async function launch(){
+
+  //Primero declaramos la promesa. 
+  let myPromise = new myPromise(function(myResolve, myReject) {
+
+    let x = 0;
+  
+  
+  // The producing code (this may take some time)
+  console.log("Estoy ejecutando el login()...")
+  //Primero revisa si hay un usuario de Moralis que se haya conectado previamente. 
+    let currentUser = Moralis.User.current();
+    console.log("Usuario Actual:")
+    console.log(currentUser);
+    //Éste bloque es para poner alguna acción que quieras que haga al detectar que no hay un user de Moralis, 
+    //..previamente conectados.
+    if(!currentUser){
+        //windows.location.pathname = "/index.html";
+        console.log("Como no hay usuario abriré Metamask para que se conecte...");
+        try{
+          console.log("Me estoy conectando ahora a la Web3...")
+          web3 = Moralis.Web3.enable(); 
+          console.log("Conectados a Web3:");
+          console.log(web3);
+          console.log("Datos obtenidos de la cadena:")
+          const chainIdHex = web3.currentProvider.chainId;
+          const chainIdDec = web3.eth.getChainId();
+          console.log(chainIdHex);
+          console.log(chainIdDec);
+          console.log("Cambiaremos x a uno para indicar que nos logueamos.")
+          x = 1; 
+        }
+        catch (error) {
+          //Esto saca un prompt alertando que no estás conectado via Metamask o lo que sea.      
+          //alert(error.message);
+          console.log(error);
+          console.log(error.message);
+          console.log("Como aún no estamos conectados, no hay más que hacer aquí por el momento.")
+             }
+    }
+  
+   
+    if (x == 1) {
+      myResolve("OK");
+    } else {
+      myReject(error);
+    }
+  });
+
+  myPromise.then(
+    function(){crear()}, 
+    function(){console.log("Hubo un error al crear...")}
+  );
+
+  async function crear(){
+
 
   console.log("Launch se empezó a ejecutar");
     //Lo primero que hago es obtener los valores que el usuario ya introdujo.
@@ -69,58 +124,5 @@ async function launch(){
  
 }
 
-async function init(){
-
-console.log("Si entramos al init...");
-myPromise = new myPromise(function(myResolve, myReject) {
-
-  let x = 0;
-
-
-// The producing code (this may take some time)
-console.log("Estoy ejecutando el login()...")
-//Primero revisa si hay un usuario de Moralis que se haya conectado previamente. 
-  let currentUser = Moralis.User.current();
-  console.log("Usuario Actual:")
-  console.log(currentUser);
-  //Éste bloque es para poner alguna acción que quieras que haga al detectar que no hay un user de Moralis, 
-  //..previamente conectados.
-  if(!currentUser){
-      //windows.location.pathname = "/index.html";
-      console.log("Como no hay usuario abriré Metamask para que se conecte...");
-      try{
-        console.log("Me estoy conectando ahora a la Web3...")
-        web3 = Moralis.Web3.enable(); 
-        console.log("Conectados a Web3:");
-        console.log(web3);
-        console.log("Datos obtenidos de la cadena:")
-        const chainIdHex = web3.currentProvider.chainId;
-        const chainIdDec = web3.eth.getChainId();
-        console.log(chainIdHex);
-        console.log(chainIdDec);
-        console.log("Cambiaremos x a uno para indicar que nos logueamos.")
-        x = 1; 
-      }
-      catch (error) {
-        //Esto saca un prompt alertando que no estás conectado via Metamask o lo que sea.      
-        //alert(error.message);
-        console.log(error);
-        console.log(error.message);
-        console.log("Como aún no estamos conectados, no hay más que hacer aquí por el momento.")
-           }
-  }
-
- 
-  if (x == 1) {
-    myResolve("OK");
-  } else {
-    myReject(error);
-  }
-});
-
 }
-
-console.log("Estoy por ejecutar el init");
-init();
-
 
