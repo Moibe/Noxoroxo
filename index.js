@@ -111,6 +111,7 @@ const myClick = (e) => {
 
         // call the function to simulate the long running process
         //fakeProcess();
+        init();
         launch();
     }
     else {
@@ -118,6 +119,7 @@ const myClick = (e) => {
 
         // call the function to simulate the long running process
         //fakeProcess();
+        init();
         launch();
     }
 
