@@ -14,6 +14,7 @@ console.log("Conectados a Moralis");
 async function init(){
   //Primero revisa si hay un usuario de Moralis que se haya conectado previamente. 
     let currentUser = Moralis.User.current();
+    console.log("Usuario Actual:")
     console.log(currentUser);
     //Éste bloque es para poner alguna acción que quieras que haga al detectar que no hay un user de Moralis, 
     //..previamente conectados.
@@ -21,15 +22,25 @@ async function init(){
         //windows.location.pathname = "/index.html";
         console.log("No user logged yet.");
         try{
-          console.log("Si entramos al try...")
-          web3 = await Moralis.Web3.enable(); 
-          console.log("Conectados a Web3:");
-          console.log(web3);
-          console.log("Datos obtenidos de la cadena:")
+          console.log("Si entramos al try...");
+          //Logueo básico:
+          console.log("login clicked");
+          const web3 = await Moralis.Web3.enable();
           const chainIdHex = web3.currentProvider.chainId;
           const chainIdDec = await web3.eth.getChainId();
           console.log(chainIdHex);
           console.log(chainIdDec);
+
+
+
+          // web3 = await Moralis.Web3.enable(); 
+          // console.log("Conectados a Web3:");
+          // console.log(web3);
+          // console.log("Datos obtenidos de la cadena:")
+          // const chainIdHex = web3.currentProvider.chainId;
+          // const chainIdDec = await web3.eth.getChainId();
+          // console.log(chainIdHex);
+          // console.log(chainIdDec);
         }
         catch (error) {
           //Esto saca un prompt alertando que no estás conectado via Metamask o lo que sea.      
