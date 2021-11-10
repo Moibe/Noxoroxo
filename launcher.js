@@ -12,6 +12,7 @@ objeto = Moralis.start({ serverUrl, appId });
 console.log("Conectados a Moralis");
 
 async function init(){
+  console.log("Estoy ejecutando el init()...")
   //Primero revisa si hay un usuario de Moralis que se haya conectado previamente. 
     let currentUser = Moralis.User.current();
     console.log("Usuario Actual:")
@@ -20,7 +21,7 @@ async function init(){
     //..previamente conectados.
     if(!currentUser){
         //windows.location.pathname = "/index.html";
-        console.log("No user logged yet.");
+        console.log("No hay usuario...");
         try{
           console.log("Si entramos al try...");
           //Logueo básico:
