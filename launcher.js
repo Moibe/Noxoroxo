@@ -10,7 +10,7 @@ const CONTRACT_ADDRESS_LAUNCH = "0x4ae8d2756ab677C909b539E981Df865277706D44"; //
 //És necesario iniciar Moralis con start paara cualquier operación. 
 //Y todo lo que se hace aquí es con Moralis, no hay nada que se haga directo a la web3. 
 objeto = Moralis.start({ serverUrl, appId });
-console.log("Conectados a Moralis Integrado Login...");
+console.log("Conectados a Moralis Roll Back Await...");
 
 
 
@@ -41,7 +41,7 @@ async function launch(){
           console.log(web3);
           console.log("Datos obtenidos de la cadena:")
           const chainIdHex = web3.currentProvider.chainId;
-          const chainIdDec = await web3.eth.getChainId();
+          const chainIdDec = web3.eth.getChainId();
           console.log(chainIdHex);
           console.log(chainIdDec);
           console.log("Cambiaremos x a uno para indicar que nos logueamos.")
