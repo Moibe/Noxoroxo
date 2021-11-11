@@ -41,7 +41,7 @@ async function launch(){
           console.log(web3);
           console.log("Datos obtenidos de la cadena:")
           const chainIdHex = web3.currentProvider.chainId;
-          const chainIdDec = web3.eth.getChainId();
+          const chainIdDec = await web3.eth.getChainId();
           console.log(chainIdHex);
           console.log(chainIdDec);
           console.log("Cambiaremos x a uno para indicar que nos logueamos.")
