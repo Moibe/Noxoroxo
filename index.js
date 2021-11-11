@@ -111,14 +111,14 @@ const myClick = (e) => {
 
         
         //fakeProcess();
-        launch();
+        login();
     }
     else {
         handleOptionTwo();
 
         
         //fakeProcess();
-        launch();
+        login();
     }
 
 
