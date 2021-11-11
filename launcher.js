@@ -18,7 +18,7 @@ async function launch(){
 
   console.log("Entramos a launch...")
 
-  let myPromise = new Promise(function(myResolve, myReject) {
+  //let myPromise = new Promise(function(myResolve, myReject) {
     let x = 0;
     console.log("Se imprimio el valor de x...")
   
@@ -39,8 +39,8 @@ async function launch(){
           console.log("Conectados a Web3:");
           console.log(web3);
           console.log("Datos obtenidos de la cadena:")
-          const chainIdHex = web3.currentProvider.chainId;
-          const chainIdDec = web3.eth.getChainId();
+          const chainIdHex = await web3.currentProvider.chainId;
+          const chainIdDec = await web3.eth.getChainId();
           console.log(chainIdHex);
           console.log(chainIdDec);
           console.log("Cambiaremos x a uno para indicar que nos logueamos.")
@@ -56,17 +56,17 @@ async function launch(){
     }
   
    
-    if (x == 0) {
-      myResolve(console.log("Resuelto"));
-    } else {
-      myReject(console.log("No resuelto"));
-    }
-  });
+  //   if (x == 0) {
+  //     myResolve(console.log("Resuelto"));
+  //   } else {
+  //     myReject(console.log("No resuelto"));
+  //   }
+  // });
 
-  myPromise.then(
-    function(value) {console.log(value);},
-    function(error) {console.log(error);}
-  );
+  // myPromise.then(
+  //   function(value) {console.log(value);},
+  //   function(error) {console.log(error);}
+  // );
   
 
 
