@@ -10,7 +10,7 @@ const CONTRACT_ADDRESS_LAUNCH = "0x4ae8d2756ab677C909b539E981Df865277706D44"; //
 //És necesario iniciar Moralis con start paara cualquier operación. 
 //Y todo lo que se hace aquí es con Moralis, no hay nada que se haga directo a la web3. 
 objeto = Moralis.start({ serverUrl, appId });
-console.log("Conectados a Moralis Roll Back Await...");
+console.log("Conectados a Nuevo Await to test error...");
 
 
 
@@ -21,7 +21,6 @@ async function launch(){
   let myPromise = new Promise(function(myResolve, myReject) {
     let x = 0;
     console.log("Se imprimio el valor de x...")
-  
   
   // The producing code (this may take some time)
   console.log("Estoy ejecutando el login()...")
@@ -36,7 +35,7 @@ async function launch(){
         console.log("Como no hay usuario abriré Metamask para que se conecte...");
         try{
           console.log("Me estoy conectando ahora a la Web3...")
-          web3 = Moralis.Web3.enable(); 
+          web3 = await Moralis.Web3.enable(); 
           console.log("Conectados a Web3:");
           console.log(web3);
           console.log("Datos obtenidos de la cadena:")
