@@ -101,7 +101,7 @@ async function login(){
     
     //Trata de conectarse a la red Mumbai.
     console.log("Conectandose a Mumbai...")
-    const switchNetworkMumbai = async () => {
+    //const switchNetworkMumbai = async () => {
       try {
         await web3.currentProvider.request({
           method: "wallet_switchEthereumChain",
@@ -133,7 +133,7 @@ async function login(){
           console.log("No cayo en error, creo que red creada...")
         }
       }
-    }
+    //}
     
     // const accounts = web3.eth.getAccounts();
     // const contract = new web3.eth.Contract(contractAbi, CONTRACT_ADDRESS_LAUNCH);
