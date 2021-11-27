@@ -4,15 +4,14 @@ const serverUrl = "https://m02z2ncyupuz.bigmoralis.com:2053/server";
 
 //Elementos que usaremos para conectar la web3. 
 let web3; 
-const CONTRACT_ADDRESS_LAUNCH = "0x4ae8d2756ab677C909b539E981Df865277706D44"; //Está en Rinkeby, si lo usas en otra red te regresará vacio.
+const CONTRACT_ADDRESS_LAUNCH = "0x4ae8d2756ab677C909b539E981Df865277706D44"; 
+//Está en Rinkeby y BSC Testnet, si lo usas en otra red te regresará vacio.
 
 
 //És necesario iniciar Moralis con start paara cualquier operación. 
 //Y todo lo que se hace aquí es con Moralis, no hay nada que se haga directo a la web3. 
 objeto = Moralis.start({ serverUrl, appId });
-console.log("El servidor se conectó a Moralis, comment over crear hasta fix red...");
-
-
+console.log("El servidor se conectó a Moralis...");
 
 async function login(){
 
@@ -53,7 +52,7 @@ async function login(){
         try{
         await web3.currentProvider.request({
           method: "wallet_switchEthereumChain",
-          params: [{ chainId: "0x38" }],
+          params: [{ chainId: "0x61" }],
         });
         console.log("Cambiamos de red correctamente...")
       }catch (error) {
