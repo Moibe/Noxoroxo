@@ -89,6 +89,8 @@ async function login(){
 
 
   console.log("Crear() se empezó a ejecutar");
+  console.log("Ésta es la cadena donde estamos actualmente...")
+  console.log(chainIdDec);
     //Lo primero que hago es obtener los valores que el usuario ya introdujo.
     //let name = document.getElementById("field1").value //Aquí iría un elemento que cachamos q varia según ambiente.
     let name = document.getElementById("field1").value
