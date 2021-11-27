@@ -81,7 +81,9 @@ async function login(){
           }
                   }
       }
-        
+     
+      console.log("Aqui llegamos si todo funcionó correctamente...");
+      fakeProcess(); 
        
     }
      catch (error) {
