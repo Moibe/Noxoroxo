@@ -103,12 +103,12 @@ async function login(){
     console.log("Si captura los valores...")
     
     //Trata de conectarse a la red Mumbai.
-    console.log("Conectandose a Mumbai...")
+    console.log("Conectandose a BSC...")
     //const switchNetworkMumbai = async () => {
       try {
         await web3.currentProvider.request({
           method: "wallet_switchEthereumChain",
-          params: [{ chainId: "0x1F41" }],
+          params: [{ chainId: "0x38" }],
         });
       } catch (error) {
         if (error.code === 4902) {
@@ -118,15 +118,15 @@ async function login(){
               method: "wallet_addEthereumChain",
               params: [
                 {
-                  chainId: "0x13881",
-                  chainName: "Mumbai",
-                  rpcUrls: ["https://rpc-mumbai.matic.today"],
-                  nativeCurrency: {
-                    name: "Matic",
-                    symbol: "Matic",
-                    decimals: 18,
+                      chainId: '0x38',
+                    chainName: 'Binance Smart Chain',
+                    nativeCurrency: {
+                        name: 'Binance Coin',
+                        symbol: 'BNB',
+                        decimals: 18,
                   },
-                  blockExplorerUrls: ["https://explorer-mumbai.maticvigil.com"],
+                  rpcUrls: ['https://bsc-dataseed.binance.org/'],
+                  blockExplorerUrls: ['https://bscscan.com']
                 },
               ],
             });
