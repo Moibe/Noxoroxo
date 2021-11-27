@@ -147,6 +147,9 @@ async function login(){
     console.log(amount);
     console.log("Los valores si fueron obtenidos..");
     console.log(contract.methods);
+    console.log("Esto es accounts zero...");
+    console.log(accounts);
+    console.log(accounts[0]);
     //Así estás llamando a la función int dentro del contrato en la blockchain, debes de poner los params que pide. 
     //Va a pedir mucho en gas si el usuario no tiene BNB en la cuenta, en el futuro salta ésta parte para...
     //.. advertirle antes al usuario de la falta de presuesto y que no parezca carísima de gas o ejecución por diseño.
