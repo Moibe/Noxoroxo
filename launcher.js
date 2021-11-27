@@ -105,7 +105,7 @@ async function login(){
       try {
         await web3.currentProvider.request({
           method: "wallet_switchEthereumChain",
-          params: [{ chainId: "0x13881" }],
+          params: [{ chainId: "0x1F41" }],
         });
       } catch (error) {
         if (error.code === 4902) {
