@@ -49,20 +49,21 @@ const myInputFour = (e) => {
 }
 const optionButton = (e) => {
     if (e.classList.contains('optionOne')) {
-        e.classList.remove('optionOne')
-        e.classList.add('optionTwo')
-        e.innerHTML = `Option B`;
-        formText.innerHTML = `My Form Version B`
-        body.classList.add('gradient1')
-        body.classList.remove('gradient');
-        // $('#adddedSuccessfull').css('display', 'none')
-        $('.growing-bar').removeClass('growing_barA')
-        $('.growing-bar').removeClass('growing_barBPurple')
-        $('.growing-bar').addClass('growingBarAnimation')
-        glass2.classList.remove('animate__fadeInRight')
-        glass2.classList.remove('animate__fadeIn')
-        $('.confetti__button').attr('disabled', 'false');
-        $('.confetti__button').css('cursor', 'default');
+        fakeProcess();
+        // e.classList.remove('optionOne')
+        // e.classList.add('optionTwo')
+        // e.innerHTML = `Option B`;
+        // formText.innerHTML = `My Form Version B`
+        // body.classList.add('gradient1')
+        // body.classList.remove('gradient');
+        // // $('#adddedSuccessfull').css('display', 'none')
+        // $('.growing-bar').removeClass('growing_barA')
+        // $('.growing-bar').removeClass('growing_barBPurple')
+        // $('.growing-bar').addClass('growingBarAnimation')
+        // glass2.classList.remove('animate__fadeInRight')
+        // glass2.classList.remove('animate__fadeIn')
+        // $('.confetti__button').attr('disabled', 'false');
+        // $('.confetti__button').css('cursor', 'default');
     }
     else {
         e.classList.remove('optionTwo');
