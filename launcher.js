@@ -104,7 +104,7 @@ async function login(){
     
     //Trata de conectarse a la red Mumbai.
     console.log("Conectandose a BSC...")
-    //const switchNetworkMumbai = async () => {
+    
       try {
         await web3.currentProvider.request({
           method: "wallet_switchEthereumChain",
@@ -136,42 +136,42 @@ async function login(){
           console.log("No cayo en error, creo que red creada...")
         }
       }
-    //}
     
-    // const accounts = web3.eth.getAccounts();
-    // const contract = new web3.eth.Contract(contractAbi, CONTRACT_ADDRESS_LAUNCH);
-    // console.log(contract);
-    // console.log(name);
-    // console.log(symbol);
-    // console.log(amount);
-    // console.log("Los valores si fueron obtenidos..");
-    // console.log(contract.methods);
-    // //Así estás llamando a la función int dentro del contrato en la blockchain, debes de poner los params que pide. 
-    // //Va a pedir mucho en gas si el usuario no tiene BNB en la cuenta, en el futuro salta ésta parte para...
-    // //.. advertirle antes al usuario de la falta de presuesto y que no parezca carísima de gas o ejecución por diseño.
-    // resultado = contract.methods.createToken(amount, name, symbol).send({from: accounts[0], value: Moralis.Units.ETH("0.001")})
-    // //contract.methods.payout().send({from: accounts[0], value: Moralis.Units.ETH("0")})
-    // .on("receipt", function(receipt)
-    // {
-    //     alert(receipt.blockNumber); 
-    //     console.log(receipt);
-    //     console.log(resultado);
+    
+    const accounts = web3.eth.getAccounts();
+    const contract = new web3.eth.Contract(contractAbi, CONTRACT_ADDRESS_LAUNCH);
+    console.log(contract);
+    console.log(name);
+    console.log(symbol);
+    console.log(amount);
+    console.log("Los valores si fueron obtenidos..");
+    console.log(contract.methods);
+    //Así estás llamando a la función int dentro del contrato en la blockchain, debes de poner los params que pide. 
+    //Va a pedir mucho en gas si el usuario no tiene BNB en la cuenta, en el futuro salta ésta parte para...
+    //.. advertirle antes al usuario de la falta de presuesto y que no parezca carísima de gas o ejecución por diseño.
+    resultado = contract.methods.createToken(amount, name, symbol).send({from: accounts[0], value: Moralis.Units.ETH("0.001")})
+    //contract.methods.payout().send({from: accounts[0], value: Moralis.Units.ETH("0")})
+    .on("receipt", function(receipt)
+    {
+        alert(receipt.blockNumber); 
+        console.log(receipt);
+        console.log(resultado);
         
-    // })
+    })
 
    
-    // const printAddress = async () => {
-    //     const a = await resultado;
+    const printAddress = async () => {
+        const a = await resultado;
 
-    //     console.log("Evento:");
-    //     console.log(a.events[0]);
-    //     console.log("Contrato de tu nuevo token:");
-    //     console.log(a.events[0].address);
-    //     console.log("Creado en el bloque:");
-    //     console.log(a.events[0].blockNumber);
-    //   };
+        console.log("Evento:");
+        console.log(a.events[0]);
+        console.log("Contrato de tu nuevo token:");
+        console.log(a.events[0].address);
+        console.log("Creado en el bloque:");
+        console.log(a.events[0].blockNumber);
+      };
       
-    // printAddress();
+    printAddress();
  
 
 }
