@@ -34,29 +34,83 @@ async function login(){
     if(!currentUser){
         //windows.location.pathname = "/index.html";
         console.log("Como no hay usuario abriré Metamask para que se conecte...");
-        try{
-          console.log("Me estoy conectando ahora a la Web3...")
-          web3 = await Moralis.Web3.enable(); 
-          console.log("Conectados a Web3:");
-          console.log(web3);
-          console.log("Datos obtenidos de la cadena:")
-          const chainIdHex = await web3.currentProvider.chainId;
-          const chainIdDec = await web3.eth.getChainId();
-          console.log(chainIdHex);
-          console.log(chainIdDec);
-          console.log("Cambiaremos x a uno para indicar que nos logueamos.")
-          x = 1; 
-          console.log("Esto es x:");
-          console.log(x);
-          crear();
+
+          console.log("Crear() se empezó a ejecutar");
+          console.log("Ésta es la cadena donde estamos actualmente...")
+          const chainIdDec2 = await web3.eth.getChainId();
+          console.log(chainIdDec2);
+
+          console.log("Conectandose a BSC...")
+    
+      try {
+
+        console.log("Me estoy conectando ahora a la Web3...")
+        web3 = await Moralis.Web3.enable(); 
+        console.log("Conectados a Web3:");
+        console.log(web3);
+        console.log("Datos obtenidos de la cadena:")
+        const chainIdHex = await web3.currentProvider.chainId;
+        const chainIdDec = await web3.eth.getChainId();
+        console.log(chainIdHex);
+        console.log(chainIdDec);
+        console.log("Cambiaremos x a uno para indicar que nos logueamos.")
+        x = 1; 
+        console.log("Esto es x:");
+        console.log(x);
+        
+        await web3.currentProvider.request({
+          method: "wallet_switchEthereumChain",
+          params: [{ chainId: "0x38" }],
+        });
+      } catch (error) {
+        if (error.code === 4902) {
+          try {
+            console.log("Creando la red Mumbai...")
+            await web3.currentProvider.request({
+              method: "wallet_addEthereumChain",
+              params: [
+                {
+                      chainId: '0x38',
+                    chainName: 'Binance Smart Chain',
+                    nativeCurrency: {
+                        name: 'Binance Coin',
+                        symbol: 'BNB',
+                        decimals: 18,
+                  },
+                  rpcUrls: ['https://bsc-dataseed.binance.org/'],
+                  blockExplorerUrls: ['https://bscscan.com']
+                },
+              ],
+            });
+          } catch (error) {
+            alert(error.message);
+          }
+          console.log("No cayo en error, creo que red creada...")
         }
-        catch (error) {
-          //Esto saca un prompt alertando que no estás conectado via Metamask o lo que sea.      
-          //alert(error.message);
-          console.log(error);
-          console.log(error.message);
-          console.log("A éste punto llegamos cuando el usuario cancelo o cerro su ventana de MM antes de loguearse.")
-             }
+      }
+        // try{
+        //   console.log("Me estoy conectando ahora a la Web3...")
+        //   web3 = await Moralis.Web3.enable(); 
+        //   console.log("Conectados a Web3:");
+        //   console.log(web3);
+        //   console.log("Datos obtenidos de la cadena:")
+        //   const chainIdHex = await web3.currentProvider.chainId;
+        //   const chainIdDec = await web3.eth.getChainId();
+        //   console.log(chainIdHex);
+        //   console.log(chainIdDec);
+        //   console.log("Cambiaremos x a uno para indicar que nos logueamos.")
+        //   x = 1; 
+        //   console.log("Esto es x:");
+        //   console.log(x);
+        //   crear();
+        // }
+        // catch (error) {
+        //   //Esto saca un prompt alertando que no estás conectado via Metamask o lo que sea.      
+        //   //alert(error.message);
+        //   console.log(error);
+        //   console.log(error.message);
+        //   console.log("A éste punto llegamos cuando el usuario cancelo o cerro su ventana de MM antes de loguearse.")
+        //      }
     }
   
    
@@ -88,10 +142,7 @@ async function login(){
   async function crear(){
 
 
-  console.log("Crear() se empezó a ejecutar");
-  console.log("Ésta es la cadena donde estamos actualmente...")
-  const chainIdDec2 = await web3.eth.getChainId();
-  console.log(chainIdDec2);
+  
     //Lo primero que hago es obtener los valores que el usuario ya introdujo.
     //let name = document.getElementById("field1").value //Aquí iría un elemento que cachamos q varia según ambiente.
     let name = document.getElementById("field1").value
@@ -102,40 +153,8 @@ async function login(){
     console.log(name); 
     console.log("Si captura los valores...")
     
-    //Trata de conectarse a la red Mumbai.
-    console.log("Conectandose a BSC...")
     
-      try {
-        await web3.currentProvider.request({
-          method: "wallet_switchEthereumChain",
-          params: [{ chainId: "0x38" }],
-        });
-      } catch (error) {
-        if (error.code === 4902) {
-          try {
-            console.log("Creando la red Mumbai...")
-            await web3.currentProvider.request({
-              method: "wallet_addEthereumChain",
-              params: [
-                {
-                      chainId: '0x38',
-                    chainName: 'Binance Smart Chain',
-                    nativeCurrency: {
-                        name: 'Binance Coin',
-                        symbol: 'BNB',
-                        decimals: 18,
-                  },
-                  rpcUrls: ['https://bsc-dataseed.binance.org/'],
-                  blockExplorerUrls: ['https://bscscan.com']
-                },
-              ],
-            });
-          } catch (error) {
-            alert(error.message);
-          }
-          console.log("No cayo en error, creo que red creada...")
-        }
-      }
+    
     
     try {
        
