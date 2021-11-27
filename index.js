@@ -112,14 +112,14 @@ const myClick = (e) => {
 
         
         //fakeProcess();
-        login();
+        crear();
     }
     else {
         handleOptionTwo();
 
         
         //fakeProcess();
-        login();
+        crear();
     }
 
 
