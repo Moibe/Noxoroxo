@@ -35,13 +35,6 @@ async function login(){
         //windows.location.pathname = "/index.html";
         console.log("Como no hay usuario abriré Metamask para que se conecte...");
 
-          console.log("Crear() se empezó a ejecutar");
-          console.log("Ésta es la cadena donde estamos actualmente...")
-          const chainIdDec2 = await web3.eth.getChainId();
-          console.log(chainIdDec2);
-
-          console.log("Conectandose a BSC...")
-    
       try {
 
         console.log("Me estoy conectando ahora a la Web3...")
