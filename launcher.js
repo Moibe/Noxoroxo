@@ -83,7 +83,8 @@ async function login(){
       }
      
       console.log("Aqui llegamos si todo funcionó correctamente...");
-      fakeProcess(); 
+      //fakeProcess(); 
+      crear();
        
     }
      catch (error) {
