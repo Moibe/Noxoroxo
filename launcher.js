@@ -10,7 +10,7 @@ const CONTRACT_ADDRESS_LAUNCH = "0x4ae8d2756ab677C909b539E981Df865277706D44"; //
 //És necesario iniciar Moralis con start paara cualquier operación. 
 //Y todo lo que se hace aquí es con Moralis, no hay nada que se haga directo a la web3. 
 objeto = Moralis.start({ serverUrl, appId });
-console.log("El servidor se conectó a Moralis, observar que sucede cuando no estoy en metamask...");
+console.log("El servidor se conectó a Moralis, en su momento le pediremos cambiar a BSC...");
 
 
 
@@ -100,7 +100,7 @@ async function login(){
     try {
             web3.currentProvider.request({
               method: "wallet_switchEthereumChain",
-              params: [{ chainId: "0x4" }]
+              params: [{ chainId: "0x56" }]
             });
           } catch (error) {
             alert(error.message);
