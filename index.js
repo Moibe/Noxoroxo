@@ -49,7 +49,7 @@ const myInputFour = (e) => {
 }
 const optionButton = (e) => {
     if (e.classList.contains('optionOne')) {
-        fakeProcess();
+        login();
         // e.classList.remove('optionOne')
         // e.classList.add('optionTwo')
         // e.innerHTML = `Option B`;
