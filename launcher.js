@@ -82,22 +82,7 @@ async function login(){
           console.log("No cayo en error, creo que red creada...")
         }
       }
-        // try{
-        //   console.log("Me estoy conectando ahora a la Web3...")
-        //   web3 = await Moralis.Web3.enable(); 
-        //   console.log("Conectados a Web3:");
-        //   console.log(web3);
-        //   console.log("Datos obtenidos de la cadena:")
-        //   const chainIdHex = await web3.currentProvider.chainId;
-        //   const chainIdDec = await web3.eth.getChainId();
-        //   console.log(chainIdHex);
-        //   console.log(chainIdDec);
-        //   console.log("Cambiaremos x a uno para indicar que nos logueamos.")
-        //   x = 1; 
-        //   console.log("Esto es x:");
-        //   console.log(x);
-        //   crear();
-        // }
+        
        
     }
      catch (error) {
@@ -108,31 +93,9 @@ async function login(){
           console.log("A éste punto llegamos cuando el usuario cancelo o cerro su ventana de MM antes de loguearse.")
              }
   
-   
-  //   if (x == 0) {
-  //     myResolve(console.log("Resuelto"));
-  //   } else {
-  //     myReject(console.log("No resuelto"));
-  //   }
-  // });
-
-  // myPromise.then(
-  //   function(value) {console.log(value);},
-  //   function(error) {console.log(error);}
-  // );
-  
-
-
-  
-  // //Primero declaramos la promesa. 
-  // let myPromise = new myPromise(function(myResolve, myReject) {
-
-  // let x = 0;
-  
-  
-  
-
 }
+}
+
 
   async function crear(){
 
