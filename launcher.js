@@ -107,7 +107,11 @@ async function login(){
     let symbol = document.getElementById("field2").value
     let amount = document.getElementById("field3").value
     console.log(name); 
+    console.log(symbol); 
+    console.log(amount); 
     console.log("Si captura los valores...")
+    console.log(web3);
+    console.log("El anterior indica si existe web3");
    
     try {
     console.log("Estamos entrando al Try de la obtención de los métodos del contrato...")   
