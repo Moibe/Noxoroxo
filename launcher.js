@@ -10,7 +10,7 @@ const CONTRACT_ADDRESS_LAUNCH = "0x4ae8d2756ab677C909b539E981Df865277706D44"; //
 //És necesario iniciar Moralis con start paara cualquier operación. 
 //Y todo lo que se hace aquí es con Moralis, no hay nada que se haga directo a la web3. 
 objeto = Moralis.start({ serverUrl, appId });
-console.log("Conectados a Moralis, ya no se llama launch!!!!!!...");
+console.log("El servidor se conectó a Moralis, el usuario aún no...");
 
 
 
@@ -45,6 +45,8 @@ async function login(){
           console.log(chainIdDec);
           console.log("Cambiaremos x a uno para indicar que nos logueamos.")
           x = 1; 
+          console.log("Esto es x:")
+          console.log(x)
         }
         catch (error) {
           //Esto saca un prompt alertando que no estás conectado via Metamask o lo que sea.      
