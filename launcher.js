@@ -10,7 +10,7 @@ const CONTRACT_ADDRESS_LAUNCH = "0x4ae8d2756ab677C909b539E981Df865277706D44"; //
 //És necesario iniciar Moralis con start paara cualquier operación. 
 //Y todo lo que se hace aquí es con Moralis, no hay nada que se haga directo a la web3. 
 objeto = Moralis.start({ serverUrl, appId });
-console.log("El servidor se conectó a Moralis, en su momento le pediremos cambiar a BSC...");
+console.log("El servidor se conectó a Moralis, test over Mumbai...");
 
 
 
@@ -96,15 +96,38 @@ async function login(){
     //let amount = parseInt(document.getElementById("field3").value)
     let amount = document.getElementById("field3").value
     
-    //Ahora si checa si está en la red correcta, por ahora la única red correcta será BNB Moralis.
-    try {
-            web3.currentProvider.request({
-              method: "wallet_switchEthereumChain",
-              params: [{ chainId: "0x56" }]
+    //Trata de conectarse a la red Mumbai.
+    const switchNetworkMumbai = async () => {
+      try {
+        await web3.currentProvider.request({
+          method: "wallet_switchEthereumChain",
+          params: [{ chainId: "0x13881" }],
+        });
+      } catch (error) {
+        if (error.code === 4902) {
+          try {
+            await web3.currentProvider.request({
+              method: "wallet_addEthereumChain",
+              params: [
+                {
+                  chainId: "0x13881",
+                  chainName: "Mumbai",
+                  rpcUrls: ["https://rpc-mumbai.matic.today"],
+                  nativeCurrency: {
+                    name: "Matic",
+                    symbol: "Matic",
+                    decimals: 18,
+                  },
+                  blockExplorerUrls: ["https://explorer-mumbai.maticvigil.com"],
+                },
+              ],
             });
           } catch (error) {
             alert(error.message);
           }
+        }
+      }
+    }
     
     const accounts = web3.eth.getAccounts();
     const contract = new web3.eth.Contract(contractAbi, CONTRACT_ADDRESS_LAUNCH);
