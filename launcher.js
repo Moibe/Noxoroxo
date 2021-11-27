@@ -51,6 +51,7 @@ async function login(){
         console.log("Esto es x:");
         console.log(x);
         
+        try{
         await web3.currentProvider.request({
           method: "wallet_switchEthereumChain",
           params: [{ chainId: "0x38" }],
@@ -58,7 +59,7 @@ async function login(){
       } catch (error) {
         if (error.code === 4902) {
           try {
-            console.log("Creando la red Mumbai...")
+            console.log("Creando la red BSC...")
             await web3.currentProvider.request({
               method: "wallet_addEthereumChain",
               params: [
@@ -97,14 +98,15 @@ async function login(){
         //   console.log(x);
         //   crear();
         // }
-        // catch (error) {
-        //   //Esto saca un prompt alertando que no estás conectado via Metamask o lo que sea.      
-        //   //alert(error.message);
-        //   console.log(error);
-        //   console.log(error.message);
-        //   console.log("A éste punto llegamos cuando el usuario cancelo o cerro su ventana de MM antes de loguearse.")
-        //      }
+       
     }
+     catch (error) {
+          //Esto saca un prompt alertando que no estás conectado via Metamask o lo que sea.      
+          //alert(error.message);
+          console.log(error);
+          console.log(error.message);
+          console.log("A éste punto llegamos cuando el usuario cancelo o cerro su ventana de MM antes de loguearse.")
+             }
   
    
   //   if (x == 0) {
