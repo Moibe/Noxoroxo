@@ -97,8 +97,10 @@ async function login(){
     let amount = document.getElementById("field3").value
 
     console.log(name); 
+    console.log("Si captura los valores...")
     
     //Trata de conectarse a la red Mumbai.
+    console.log("Conectandose a Mumbai...")
     const switchNetworkMumbai = async () => {
       try {
         await web3.currentProvider.request({
@@ -108,6 +110,7 @@ async function login(){
       } catch (error) {
         if (error.code === 4902) {
           try {
+            console.log("Creando la red Mumbai...")
             await web3.currentProvider.request({
               method: "wallet_addEthereumChain",
               params: [
@@ -127,6 +130,7 @@ async function login(){
           } catch (error) {
             alert(error.message);
           }
+          console.log("No cayo en error, creo que red creada...")
         }
       }
     }
