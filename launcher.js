@@ -105,17 +105,15 @@ async function login(){
     //let name = document.getElementById("field1").value //Aquí iría un elemento que cachamos q varia según ambiente.
     let name = document.getElementById("field1").value
     let symbol = document.getElementById("field2").value
-    //let amount = parseInt(document.getElementById("field3").value)
     let amount = document.getElementById("field3").value
-
     console.log(name); 
     console.log("Si captura los valores...")
-    
    
     try {
-       
+    console.log("Estamos entrando al Try de la obtención de los métodos del contrato...")   
     const accounts = web3.eth.getAccounts();
     const contract = new web3.eth.Contract(contractAbi, CONTRACT_ADDRESS_LAUNCH);
+    console.log("Contrato:");
     console.log(contract);
     console.log(name);
     console.log(symbol);
