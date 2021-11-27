@@ -10,7 +10,7 @@ const CONTRACT_ADDRESS_LAUNCH = "0x4ae8d2756ab677C909b539E981Df865277706D44"; //
 //És necesario iniciar Moralis con start paara cualquier operación. 
 //Y todo lo que se hace aquí es con Moralis, no hay nada que se haga directo a la web3. 
 objeto = Moralis.start({ serverUrl, appId });
-console.log("El servidor se conectó a Moralis, el usuario aún no...");
+console.log("El servidor se conectó a Moralis, observar que sucede cuando no estoy en metamask...");
 
 
 
@@ -21,6 +21,7 @@ async function login(){
   //let myPromise = new Promise(function(myResolve, myReject) {
     let x = 0;
     console.log("Se imprimio el valor de x...")
+    console.log(x);
   
   // The producing code (this may take some time)
   console.log("Estoy ejecutando el login()...")
