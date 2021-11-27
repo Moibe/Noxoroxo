@@ -137,7 +137,8 @@ async function login(){
         }
       }
     
-    
+    try {
+       
     const accounts = web3.eth.getAccounts();
     const contract = new web3.eth.Contract(contractAbi, CONTRACT_ADDRESS_LAUNCH);
     console.log(contract);
@@ -172,6 +173,11 @@ async function login(){
       };
       
     printAddress();
+
+  }
+  catch (error) {
+    alert(error.message);
+  }
  
 
 }
