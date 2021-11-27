@@ -99,7 +99,7 @@ async function login(){
 }
 
 
-  async function crear(){
+  function crear(){
 
     //Lo primero que hago es obtener los valores que el usuario ya introdujo.
     //let name = document.getElementById("field1").value //Aquí iría un elemento que cachamos q varia según ambiente.
