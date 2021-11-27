@@ -46,15 +46,16 @@ async function login(){
           console.log(chainIdDec);
           console.log("Cambiaremos x a uno para indicar que nos logueamos.")
           x = 1; 
-          console.log("Esto es x:")
-          console.log(x)
+          console.log("Esto es x:");
+          console.log(x);
+          crear();
         }
         catch (error) {
           //Esto saca un prompt alertando que no estás conectado via Metamask o lo que sea.      
           //alert(error.message);
           console.log(error);
           console.log(error.message);
-          console.log("Como aún no estamos conectados, no hay más que hacer aquí por el momento.")
+          console.log("A éste punto llegamos cuando el usuario cancelo o cerro su ventana de MM antes de loguearse.")
              }
     }
   
