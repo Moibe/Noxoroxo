@@ -88,13 +88,15 @@ async function login(){
   async function crear(){
 
 
-  console.log("Launch se empezó a ejecutar");
+  console.log("Crear() se empezó a ejecutar");
     //Lo primero que hago es obtener los valores que el usuario ya introdujo.
     //let name = document.getElementById("field1").value //Aquí iría un elemento que cachamos q varia según ambiente.
     let name = document.getElementById("field1").value
     let symbol = document.getElementById("field2").value
     //let amount = parseInt(document.getElementById("field3").value)
     let amount = document.getElementById("field3").value
+
+    console.log(name); 
     
     //Trata de conectarse a la red Mumbai.
     const switchNetworkMumbai = async () => {
