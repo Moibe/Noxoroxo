@@ -17,8 +17,7 @@ console.log("El servidor se conectó a Moralis, comment over crear hasta fix red
 async function login(){
 
   console.log("Entramos a launch...")
-
-  //let myPromise = new Promise(function(myResolve, myReject) {
+  
     let x = 0;
     console.log("Se imprimio el valor de x...")
     console.log(x);
@@ -56,7 +55,8 @@ async function login(){
           method: "wallet_switchEthereumChain",
           params: [{ chainId: "0x38" }],
         });
-      } catch (error) {
+        console.log("Cambiamos de red correctamente...")
+      }catch (error) {
         if (error.code === 4902) {
           try {
             console.log("Creando la red BSC...")
@@ -79,8 +79,7 @@ async function login(){
           } catch (error) {
             alert(error.message);
           }
-          console.log("No cayo en error, creo que red creada...")
-        }
+                  }
       }
         
        
@@ -99,8 +98,6 @@ async function login(){
 
   async function crear(){
 
-
-  
     //Lo primero que hago es obtener los valores que el usuario ya introdujo.
     //let name = document.getElementById("field1").value //Aquí iría un elemento que cachamos q varia según ambiente.
     let name = document.getElementById("field1").value
@@ -111,9 +108,7 @@ async function login(){
     console.log(name); 
     console.log("Si captura los valores...")
     
-    
-    
-    
+   
     try {
        
     const accounts = web3.eth.getAccounts();
