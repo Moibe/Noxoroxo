@@ -136,10 +136,11 @@ async function login(){
     //contract.methods.payout().send({from: accounts[0], value: Moralis.Units.ETH("0")})
     .on("receipt", function(receipt)
     {
+        console.log("Esto es el resultado:")
         console.log(receipt.blockNumber); 
         console.log(receipt);
         console.log(resultado);
-        printAddress();
+       
         
     })
 
