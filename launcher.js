@@ -146,28 +146,24 @@ async function login(){
     .on("receipt", console.log(resultado));
     //.on("receipt", (receipt) => setTx(receipt));
 }
-}
 
-
-   
-    const printAddress = async () => {
-        const a = await resultado;
-
-        console.log("Evento:");
-        console.log(a.events[0]);
-        console.log("Contrato de tu nuevo token:");
-        console.log(a.events[0].address);
-        console.log("Creado en el bloque:");
-        console.log(a.events[0].blockNumber);
-      };
-      
-    //printAddress();
-
-  }
   catch (error) {
     console.log(error.message);
   }
  
+
+  const printAddress = async () => {
+    const a = await resultado;
+
+    console.log("Evento:");
+    console.log(a.events[0]);
+    console.log("Contrato de tu nuevo token:");
+    console.log(a.events[0].address);
+    console.log("Creado en el bloque:");
+    console.log(a.events[0].blockNumber);
+  };
+  
+printAddress();
 
 }
 
