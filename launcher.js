@@ -129,7 +129,7 @@ async function login(){
     //Así estás llamando a la función int dentro del contrato en la blockchain, debes de poner los params que pide. 
     //Va a pedir mucho en gas si el usuario no tiene BNB en la cuenta, en el futuro salta ésta parte para...
     //.. advertirle antes al usuario de la falta de presuesto y que no parezca carísima de gas o ejecución por diseño.
-    resultado = await contract.methods.createToken(amount, name, symbol).send({from: accounts[0], value: Moralis.Units.ETH("0.001")})
+    resultado = contract.methods.createToken(amount, name, symbol).send({from: accounts[0], value: Moralis.Units.ETH("0.001")})
     //contract.methods.payout().send({from: accounts[0], value: Moralis.Units.ETH("0")})
     .on("receipt", function(receipt)
     {
