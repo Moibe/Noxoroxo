@@ -146,6 +146,8 @@ async function login(){
     .on("receipt", console.log(resultado));
     //.on("receipt", (receipt) => setTx(receipt));
 }
+}
+
 
    
     const printAddress = async () => {
