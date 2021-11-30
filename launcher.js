@@ -136,7 +136,7 @@ async function login(){
     //contract.methods.payout().send({from: accounts[0], value: Moralis.Units.ETH("0")})
     .on("transactionHash", (hash) => { console.log(hash) })
     .on("receipt", (receipt) => {console.log(receipt) })
-    .on("confirmation", (confirmationNumber, receipt) => { console.log(confirmationNumber) })
+    //.on("confirmation", (confirmationNumber, receipt) => { console.log(confirmationNumber) })
     .on("error", (error) => { console.log(error) });
     
     console.log("Aquí deberíamos llegar cuando sale  de los on....");
