@@ -135,7 +135,7 @@ async function login(){
     .on("receipt", (receipt) => {console.log(receipt) })
     //.on("confirmation", (confirmationNumber, receipt) => { console.log(confirmationNumber) })
     .on("error", (error) => { console.log(error) })
-    .then(console.log("Aquí llegamos después del Then..."))
+    
         
     
     // .on("receipt", function(receipt)
@@ -150,18 +150,18 @@ async function login(){
   }
  
 
-//   const printAddress = async () => {
-//     const a = await resultado;
+  const printAddress = async () => {
+    const a = await resultado;
 
-//     console.log("Evento:");
-//     console.log(a.events[0]);
-//     console.log("Contrato de tu nuevo token:");
-//     console.log(a.events[0].address);
-//     console.log("Creado en el bloque:");
-//     console.log(a.events[0].blockNumber);
-//   };
+    console.log("Evento:");
+    console.log(a.events[0]);
+    console.log("Contrato de tu nuevo token:");
+    console.log(a.events[0].address);
+    console.log("Creado en el bloque:");
+    console.log(a.events[0].blockNumber);
+  };
   
-// printAddress();
+printAddress();
 
 }
 
