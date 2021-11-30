@@ -113,7 +113,7 @@ async function login(){
     console.log("El anterior indica si existe web3");
    
     try {
-    console.log("Estamos entrando al Try de la obtención de los métodos del contrato...")   
+    console.log("2021 Estamos entrando a la Obtención de los métodos del contrato...")   
     const accounts = await web3.eth.getAccounts();
     const contract = new web3.eth.Contract(contractAbi, CONTRACT_ADDRESS_LAUNCH);
     console.log("Contrato:");
@@ -129,11 +129,12 @@ async function login(){
     //Así estás llamando a la función int dentro del contrato en la blockchain, debes de poner los params que pide. 
     //Va a pedir mucho en gas si el usuario no tiene BNB en la cuenta, en el futuro salta ésta parte para...
     //.. advertirle antes al usuario de la falta de presuesto y que no parezca carísima de gas o ejecución por diseño.
-    resultado = await contract.methods.createToken(amount, name, symbol).send({from: accounts[0], value: Moralis.Units.ETH("0.001")})
+    resultado = contract.methods.createToken(amount, name, symbol).send({from: accounts[0], value: Moralis.Units.ETH("0.001")})
     //contract.methods.payout().send({from: accounts[0], value: Moralis.Units.ETH("0")})
     .on("receipt", function(receipt)
     {
-        alert(receipt.blockNumber); 
+        console.log("Resultados están listos...!")
+        console.log(receipt.blockNumber); 
         console.log(receipt);
         console.log(resultado);
         
@@ -155,7 +156,7 @@ async function login(){
 
   }
   catch (error) {
-    alert(error.message);
+    console.log(error.message);
   }
  
 
