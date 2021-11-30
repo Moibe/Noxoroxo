@@ -139,7 +139,9 @@ async function login(){
     .on("confirmation", (confirmationNumber, receipt) => { console.log(confirmationNumber) })
     .on("error", (error) => { console.log(error) });
     
-    
+    console.log("Aquí deberíamos llegar cuando sale  de los on....");
+    console.log("Y el resultado es....");
+    console.log(resultado);
     // .on("receipt", function(receipt)
     // {
     //     console.log("Esto es el resultado:")
