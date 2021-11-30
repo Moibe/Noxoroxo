@@ -53,7 +53,7 @@ async function login(){
         try{
         await web3.currentProvider.request({
           method: "wallet_switchEthereumChain",
-          params: [{ chainId: "0x38" }],
+          params: [{ chainId: "0x61" }],
         });
         console.log("Cambiamos de red correctamente...")
       }catch (error) {
