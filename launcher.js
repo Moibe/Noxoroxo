@@ -146,10 +146,7 @@ async function login(){
     //     console.log(receipt.blockNumber); 
     //     console.log(receipt);
     //     console.log(resultado);
-        
-       
-    // }).on("receipt", (receipt) => setTx(receipt));
-}
+    }
   catch (error) {
     console.log(error.message);
   }
