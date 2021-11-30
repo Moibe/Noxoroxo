@@ -128,10 +128,12 @@ async function login(){
     
     resultado = await contract.methods.createToken(amount, name, symbol).send({from: accounts[0], value: Moralis.Units.ETH("0.001")})
     .on("transactionHash", (hash) => { console.log(hash) })
-    .on("receipt", (receipt) => {console.log(resultado) })
+    .on("receipt", (receipt) => {console.log(receipt) })
     .on("error", (error) => { console.log(error) })
     //.on("confirmation", (confirmationNumber, receipt) => { console.log(confirmationNumber) })
     
+    console.log("Esto es el resultado ahora si...")
+    console.log(resultado);
           
     
     // .on("receipt", function(receipt)
