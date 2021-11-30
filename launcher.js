@@ -113,7 +113,11 @@ async function login(){
     console.log("El anterior indica si existe web3");
    
     try {
+<<<<<<< HEAD
     console.log("2021 Estamos entrando a la Obtención de los métodos del contrato...")   
+=======
+    console.log("Estamos entrando al Try de la obtención de los métodos del contrato...")   
+>>>>>>> parent of 2b025db (Update launcher.js)
     const accounts = await web3.eth.getAccounts();
     const contract = new web3.eth.Contract(contractAbi, CONTRACT_ADDRESS_LAUNCH);
     console.log("Contrato:");
