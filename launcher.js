@@ -142,6 +142,8 @@ async function login(){
     console.log("Aquí deberíamos llegar cuando sale  de los on....");
     console.log("Y el resultado es....");
     console.log(resultado);
+    console.log("Y éste es el confirmation númber");
+    console.log(resultado.confirmationNumber);
     // .on("receipt", function(receipt)
     // {
     //     console.log("Esto es el resultado:")
