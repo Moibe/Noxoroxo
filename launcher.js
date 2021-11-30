@@ -135,7 +135,7 @@ async function login(){
     //.on("confirmation", (confirmationNumber, receipt) => { console.log(confirmationNumber) })
     
     console.log("Esto es el resultado ahora si...")
-    console.log(resultado.events);
+    console.log(resultado.eventsmoi);
 
     // const printAddress = async () => {
     //   const a = await resultado;
