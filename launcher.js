@@ -136,7 +136,20 @@ async function login(){
     
     console.log("Esto es el resultado ahora si...")
     console.log(resultado);
+
+    const printAddress = async () => {
+      const a = await resultado;
+  
+      console.log("Evento:");
+      console.log(a.events[0]);
+      console.log("Contrato de tu nuevo token:");
+      console.log(a.events[0].address);
+      console.log("Creado en el bloque:");
+      console.log(a.events[0].blockNumber);
+    };
+  
     printAddress();
+    
           
     
     // .on("receipt", function(receipt)
@@ -151,16 +164,7 @@ async function login(){
   }
  
 
-  const printAddress = async () => {
-    const a = await resultado;
 
-    console.log("Evento:");
-    console.log(a.events[0]);
-    console.log("Contrato de tu nuevo token:");
-    console.log(a.events[0].address);
-    console.log("Creado en el bloque:");
-    console.log(a.events[0].blockNumber);
-  };
   
 //contract.methods.payout().send({from: accounts[0], value: Moralis.Units.ETH("0")})
 
