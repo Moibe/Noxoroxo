@@ -99,6 +99,8 @@ async function login(){
 }
 
 
+
+
   async function crear(){
 
     //Lo primero que hago es obtener los valores que el usuario ya introdujo.
@@ -134,6 +136,7 @@ async function login(){
     
     console.log("Esto es el resultado ahora si...")
     console.log(resultado);
+    printAddress();
           
     
     // .on("receipt", function(receipt)
