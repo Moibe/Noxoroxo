@@ -134,16 +134,21 @@ async function login(){
     //.. advertirle antes al usuario de la falta de presuesto y que no parezca carísima de gas o ejecución por diseño.
     resultado = await contract.methods.createToken(amount, name, symbol).send({from: accounts[0], value: Moralis.Units.ETH("0.001")})
     //contract.methods.payout().send({from: accounts[0], value: Moralis.Units.ETH("0")})
-    .on("receipt", function(receipt)
-    {
-        console.log("Esto es el resultado:")
-        console.log(receipt.blockNumber); 
-        console.log(receipt);
-        console.log(resultado);
-        console.log("Aquí termina el .on del receipt")
-        console.log("y sigue el transaction hash");
+    .on("transactionHash", (hash) => { console.log(hash) })
+    .on("receipt", (receipt) => {console.log(receipt) })
+    .on("confirmation", (confirmationNumber, receipt) => { console.log(confirmationNumber) })
+    .on("error", (error) => { console.log(error) });
+    
+    
+    // .on("receipt", function(receipt)
+    // {
+    //     console.log("Esto es el resultado:")
+    //     console.log(receipt.blockNumber); 
+    //     console.log(receipt);
+    //     console.log(resultado);
+        
        
-    }).on("receipt", (receipt) => setTx(receipt));
+    // }).on("receipt", (receipt) => setTx(receipt));
 }
   catch (error) {
     console.log(error.message);
