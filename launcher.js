@@ -114,15 +114,9 @@ async function login(){
     console.log("El anterior indica si existe web3");
    
     try {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     console.log("2021 Estamos entrando a la Obtención de los métodos del contrato...")   
-=======
-    console.log("Estamos entrando al Try de la obtención de los métodos del contrato...")   
->>>>>>> parent of 2b025db (Update launcher.js)
-=======
-    console.log("182 Estamos entrando a la Obtención de los métodos del contrato...")   
->>>>>>> parent of a219110 (Update launcher.js)
+ 
     const accounts = await web3.eth.getAccounts();
     const contract = new web3.eth.Contract(contractAbi, CONTRACT_ADDRESS_LAUNCH);
     console.log("Contrato:");
@@ -142,7 +136,7 @@ async function login(){
     //contract.methods.payout().send({from: accounts[0], value: Moralis.Units.ETH("0")})
     .on("receipt", function(receipt)
     {
-        alert(receipt.blockNumber); 
+        console.log(receipt.blockNumber); 
         console.log(receipt);
         console.log(resultado);
         
