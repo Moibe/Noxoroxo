@@ -139,6 +139,7 @@ async function login(){
         console.log(receipt.blockNumber); 
         console.log(receipt);
         console.log(resultado);
+        printAddress();
         
     })
 
@@ -154,7 +155,7 @@ async function login(){
         console.log(a.events[0].blockNumber);
       };
       
-    printAddress();
+    //printAddress();
 
   }
   catch (error) {
