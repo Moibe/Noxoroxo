@@ -156,7 +156,7 @@ async function login(){
 
   }
   catch (error) {
-    alert(error.message);
+    console.log(error.message);
   }
  
 
