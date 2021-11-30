@@ -136,6 +136,7 @@ async function login(){
     //.on("confirmation", (confirmationNumber, receipt) => { console.log(confirmationNumber) })
     .on("error", (error) => { console.log(error) })
     
+    printAddress();
         
     
     // .on("receipt", function(receipt)
@@ -161,7 +162,7 @@ async function login(){
     console.log(a.events[0].blockNumber);
   };
   
-printAddress();
+
 
 }
 
