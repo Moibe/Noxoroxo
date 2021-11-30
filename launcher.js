@@ -135,20 +135,20 @@ async function login(){
     //.on("confirmation", (confirmationNumber, receipt) => { console.log(confirmationNumber) })
     
     console.log("Esto es el resultado ahora si...")
-    console.log(resultado);
+    console.log(resultado.events);
 
-    const printAddress = async () => {
-      const a = await resultado;
+    // const printAddress = async () => {
+    //   const a = await resultado;
   
-      console.log("Evento:");
-      console.log(a.events[0]);
-      console.log("Contrato de tu nuevo token:");
-      console.log(a.events[0].address);
-      console.log("Creado en el bloque:");
-      console.log(a.events[0].blockNumber);
-    };
+    //   console.log("Evento:");
+    //   console.log(a.events[0]);
+    //   console.log("Contrato de tu nuevo token:");
+    //   console.log(a.events[0].address);
+    //   console.log("Creado en el bloque:");
+    //   console.log(a.events[0].blockNumber);
+    // };
   
-    printAddress();
+    // printAddress();
     
           
     
