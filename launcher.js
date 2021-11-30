@@ -140,10 +140,12 @@ async function login(){
         console.log(receipt.blockNumber); 
         console.log(receipt);
         console.log(resultado);
+        console.log("Aquí termina el .on del receipt")
+        console.log("y sigue el transaction hash");
        
         
-    }).on("transactionHash", (hash) => console.log(hash))
-    .on("receipt", console.log(resultado));
+    }).on("transactionHash", console.log("Esto sucede en el transactionHash..."))
+    .on("transactionHash", (hash) => console.log(hash))
     //.on("receipt", (receipt) => setTx(receipt));
 }
 
