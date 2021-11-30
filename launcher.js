@@ -142,7 +142,10 @@ async function login(){
         console.log(resultado);
        
         
-    })
+    }).on("transactionHash", (hash) => console.log(hash))
+    .on("receipt", console.log(resultado));
+    //.on("receipt", (receipt) => setTx(receipt));
+}
 
    
     const printAddress = async () => {
