@@ -126,15 +126,13 @@ async function login(){
     console.log(amount);
     console.log("Los valores si fueron obtenidos..");
     console.log(contract.methods);
-    console.log("Esto es accounts zero...");
     console.log(accounts[0]);
     
-    resultado = await contract.methods.createToken(amount, name, symbol).send({from: accounts[0], value: Moralis.Units.ETH("0.001")})
-    //contract.methods.payout().send({from: accounts[0], value: Moralis.Units.ETH("0")})
+    resultado = contract.methods.createToken(amount, name, symbol).send({from: accounts[0], value: Moralis.Units.ETH("0.001")})
     .on("transactionHash", (hash) => { console.log(hash) })
     .on("receipt", (receipt) => {console.log(receipt) })
-    //.on("confirmation", (confirmationNumber, receipt) => { console.log(confirmationNumber) })
     .on("error", (error) => { console.log(error) })
+    //.on("confirmation", (confirmationNumber, receipt) => { console.log(confirmationNumber) })
     
     printAddress();
         
@@ -162,7 +160,7 @@ async function login(){
     console.log(a.events[0].blockNumber);
   };
   
-
+//contract.methods.payout().send({from: accounts[0], value: Moralis.Units.ETH("0")})
 
 }
 
