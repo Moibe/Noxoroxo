@@ -127,23 +127,17 @@ async function login(){
     console.log("Los valores si fueron obtenidos..");
     console.log(contract.methods);
     console.log("Esto es accounts zero...");
-    console.log(accounts);
     console.log(accounts[0]);
-    //Así estás llamando a la función int dentro del contrato en la blockchain, debes de poner los params que pide. 
-    //Va a pedir mucho en gas si el usuario no tiene BNB en la cuenta, en el futuro salta ésta parte para...
-    //.. advertirle antes al usuario de la falta de presuesto y que no parezca carísima de gas o ejecución por diseño.
+    
     resultado = await contract.methods.createToken(amount, name, symbol).send({from: accounts[0], value: Moralis.Units.ETH("0.001")})
     //contract.methods.payout().send({from: accounts[0], value: Moralis.Units.ETH("0")})
     .on("transactionHash", (hash) => { console.log(hash) })
     .on("receipt", (receipt) => {console.log(receipt) })
     //.on("confirmation", (confirmationNumber, receipt) => { console.log(confirmationNumber) })
-    .on("error", (error) => { console.log(error) });
+    .on("error", (error) => { console.log(error) })
+    .then(console.log("Aquí llegamos después del Then..."))
+        
     
-    console.log("Aquí deberíamos llegar cuando sale  de los on....");
-    console.log("Y el resultado es....");
-    console.log(resultado);
-    console.log("Y éste es el confirmation númber");
-    console.log(resultado.confirmationNumber);
     // .on("receipt", function(receipt)
     // {
     //     console.log("Esto es el resultado:")
